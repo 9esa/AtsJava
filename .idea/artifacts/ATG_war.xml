@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="ATG:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="com.kirichenko.atg-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="ATG:war exploded" />
+    </root>
+  </artifact>
+</component>

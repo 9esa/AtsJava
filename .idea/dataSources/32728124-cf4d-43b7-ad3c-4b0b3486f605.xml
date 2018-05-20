@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="atg@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.0">
+    <root id="1"/>
+    <schema id="2" parent="1" name="atg">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="Denis"/>
+    <schema id="4" parent="1" name="information_schema"/>
+    <schema id="5" parent="1" name="mysql"/>
+    <schema id="6" parent="1" name="performance_schema"/>
+    <schema id="7" parent="1" name="sys"/>
+    <table id="8" parent="2" name="bill"/>
+    <table id="9" parent="2" name="billFordriver"/>
+    <table id="10" parent="2" name="client"/>
+    <table id="11" parent="2" name="days"/>
+    <table id="12" parent="2" name="delivery_address"/>
+    <table id="13" parent="2" name="driver"/>
+    <table id="14" parent="2" name="journal_calls"/>
+    <table id="15" parent="2" name="permission"/>
+    <table id="16" parent="2" name="users"/>
+    <column id="17" parent="8" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="18" parent="8" name="idDeliveryAddress">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="19" parent="8" name="amount">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="20" parent="8" name="price">
+      <Position>4</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="21" parent="8" name="comment">
+      <Position>5</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="22" parent="8" name="idDate">
+      <Position>6</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="23" parent="8" name="billDay">
+      <Position>7</Position>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="24" parent="8" name="idBillForDriver">
+      <Position>8</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <index id="25" parent="8" name="idDate_idx">
+      <ColNames>idDate</ColNames>
+    </index>
+    <index id="26" parent="8" name="idDeliver_idx">
+      <ColNames>idDeliveryAddress</ColNames>
+    </index>
+    <index id="27" parent="8" name="idBillForDriver_idx">
+      <ColNames>idBillForDriver</ColNames>
+    </index>
+    <key id="28" parent="8" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="29" parent="8" name="idDeliver">
+      <ColNames>idDeliveryAddress</ColNames>
+      <RefSchemaName>atg</RefSchemaName>
+      <RefTableName>delivery_address</RefTableName>
+      <RefColNames>iddelivery_address</RefColNames>
+      <OnUpdate>no-action</OnUpdate>
+      <OnDelete>no-action</OnDelete>
+    </foreign-key>
+    <foreign-key id="30" parent="8" name="idDate">
+      <ColNames>idDate</ColNames>
+      <RefSchemaName>atg</RefSchemaName>
+      <RefTableName>days</RefTableName>
+      <RefColNames>iddays</RefColNames>
+      <OnUpdate>no-action</OnUpdate>
+      <OnDelete>no-action</OnDelete>
+    </foreign-key>
+    <foreign-key id="31" parent="8" name="idBillForDriver">
+      <ColNames>idBillForDriver</ColNames>
+      <RefSchemaName>atg</RefSchemaName>
+      <RefTableName>billFordriver</RefTableName>
+      <RefColNames>id</RefColNames>
+      <OnUpdate>no-action</OnUpdate>
+      <OnDelete>no-action</OnDelete>
+    </foreign-key>
+    <column id="32" parent="9" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="33" parent="9" name="idBill">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="34" parent="9" name="timeForDay">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="35" parent="9" name="idDriver">
+      <Position>4</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <index id="36" parent="9" name="idDriver_idx">
+      <ColNames>idDriver</ColNames>
+    </index>
+    <key id="37" parent="9" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="38" parent="9" name="idDriver">
+      <ColNames>idDriver</ColNames>
+      <RefSchemaName>atg</RefSchemaName>
+      <RefTableName>driver</RefTableName>
+      <RefColNames>iddriver</RefColNames>
+      <OnUpdate>update</OnUpdate>
+      <OnDelete>no-action</OnDelete>
+    </foreign-key>
+    <column id="39" parent="10" name="idclient">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="40" parent="10" name="secondName">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="41" parent="10" name="firstName">
+      <Position>3</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="42" parent="10" name="phone">
+      <Position>4</Position>
+      <DataType>varchar(45)|0</DataType>
+    </column>
+    <column id="43" parent="10" name="sale">
+      <Position>5</Position>
+      <DataType>varchar(45)|0</DataType>
+    </column>
+    <key id="44" parent="10" name="PRIMARY">
+      <ColNames>idclient</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="45" parent="11" name="iddays">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="46" parent="11" name="currentDate">
+      <Position>2</Position>
+      <DataType>datetime|0</DataType>
+    </column>
+    <key id="47" parent="11" name="PRIMARY">
+      <ColNames>iddays</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="48" parent="12" name="iddelivery_address">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="49" parent="12" name="address">
+      <Position>2</Position>
+      <DataType>varchar(45)|0</DataType>
+    </column>
+    <column id="50" parent="12" name="clientId">
+      <Position>4</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="51" parent="12" name="isMain">
+      <Position>3</Position>
+      <DataType>varchar(45)|0</DataType>
+    </column>
+    <index id="52" parent="12" name="idClient_idx">
+      <ColNames>clientId</ColNames>
+    </index>
+    <key id="53" parent="12" name="PRIMARY">
+      <ColNames>iddelivery_address</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="54" parent="12" name="idClient">
+      <ColNames>clientId</ColNames>
+      <RefSchemaName>atg</RefSchemaName>
+      <RefTableName>client</RefTableName>
+      <RefColNames>idclient</RefColNames>
+      <OnUpdate>no-action</OnUpdate>
+      <OnDelete>no-action</OnDelete>
+    </foreign-key>
+    <column id="55" parent="13" name="iddriver">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="56" parent="13" name="SecondName">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="57" parent="13" name="FirstName">
+      <Position>3</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="58" parent="13" name="phone">
+      <Position>4</Position>
+      <DataType>varchar(45)|0</DataType>
+    </column>
+    <column id="59" parent="13" name="remove">
+      <Position>5</Position>
+      <DataType>tinyint(1)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <key id="60" parent="13" name="PRIMARY">
+      <ColNames>iddriver</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="61" parent="14" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="62" parent="14" name="dateCall">
+      <Position>2</Position>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="63" parent="14" name="phoneCall">
+      <Position>3</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="64" parent="14" name="destinationCall">
+      <Position>4</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <key id="65" parent="14" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="66" parent="15" name="idpermission">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="67" parent="15" name="textPermission">
+      <Position>2</Position>
+      <DataType>varchar(45)|0</DataType>
+    </column>
+    <key id="68" parent="15" name="PRIMARY">
+      <ColNames>idpermission</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="69" parent="16" name="idusers">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="70" parent="16" name="firstName">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="71" parent="16" name="secondName">
+      <Position>3</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="72" parent="16" name="phone">
+      <Position>4</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="73" parent="16" name="login">
+      <Position>5</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="74" parent="16" name="password">
+      <Position>6</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="75" parent="16" name="permission">
+      <Position>7</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <index id="76" parent="16" name="permission_idx">
+      <ColNames>permission</ColNames>
+    </index>
+    <key id="77" parent="16" name="PRIMARY">
+      <ColNames>idusers</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="78" parent="16" name="permission">
+      <ColNames>permission</ColNames>
+      <RefSchemaName>atg</RefSchemaName>
+      <RefTableName>permission</RefTableName>
+      <RefColNames>idpermission</RefColNames>
+      <OnUpdate>no-action</OnUpdate>
+      <OnDelete>no-action</OnDelete>
+    </foreign-key>
+  </database-model>
+</dataSource>
