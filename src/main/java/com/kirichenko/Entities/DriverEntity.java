@@ -20,6 +20,16 @@ public class DriverEntity {
         this.remove = remove;
     }
 
+    public DriverEntity(boolean bValue) {
+        this.secondName = "";
+        this.firstName = "";
+        this.phone = "";
+        this.remove = false;
+    }
+
+    public DriverEntity() {
+    }
+
     @Basic
     @Column(name = "remove")
     public boolean isRemove() {
